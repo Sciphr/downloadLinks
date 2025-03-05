@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTheme } from "./ThemeContext";
 import { Switch } from "@headlessui/react";
 import getTheme from "./getTheme";
 
@@ -9,12 +10,7 @@ export default function ModeToggle() {
   const [userTheme, setUserTheme] = useState(null);
   const theme = getTheme(userTheme);
   const [currentTheme, setCurrentTheme] = useState(theme);
-
-  useEffect(() => {
-    if (typeof window !== "undefined" && localStorage.getItem("userTheme")) {
-      setUserTheme(localStorage.getItem("userTheme"));
-    }
-  }, []);
+  const { contextTheme, contextToggleTheme } = useTheme();
 
   useEffect(() => {
     setCurrentTheme(theme);
@@ -34,6 +30,7 @@ export default function ModeToggle() {
       localStorage.setItem("userTheme", newTheme);
     }
     setUserTheme(newTheme);
+    contextToggleTheme();
   };
 
   return (
