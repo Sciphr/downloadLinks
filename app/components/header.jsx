@@ -20,10 +20,11 @@ const Header = () => {
             src={contextTheme === "dark" ? darkModeLogo : colourlogo}
             alt="logo"
             width={700}
-            className="py-8"
+            className="py-8 transition-opacity duration-300 ease-in-out" // Added transition here
+            style={{ opacity: contextTheme === "dark" ? 1 : 1 }} // to prevent initial flicker
           />
           <p
-            className={`text-3xl font-bold ${
+            className={`text-3xl font-bold transition-colors duration-300 ease-in-out ${
               contextTheme === "dark" ? "text-white" : "text-gray-800"
             }`}
           >
