@@ -24,20 +24,20 @@ export default function Home() {
 
   return (
     <div
-      className={`grid grid-rows-[auto_1fr_auto] items-center justify-items-center min-h-screen p-8 sm:pt-5  font-[family-name:var(--font-geist-sans)] ${
+      className={`grid grid-rows-[auto_1fr_auto] gap-y-20 items-center justify-items-center min-h-screen p-8 font-[family-name:var(--font-geist-sans)] ${
         contextTheme === "dark"
           ? "bg-gray-900 text-white"
           : "bg-white text-gray-800"
       }`}
     >
       <Header />
-      <div className="row-start-2 col-span-full flex justify-center">
+      <div className="row-start-4 mt-[-1rem] col-span-full flex justify-center">
         <DownloadLink
           name="All Provinces/Territories"
           link="https://www.parklanesys.com/Downloads/9497/EXE/PKV12ALL.exe"
         />
       </div>
-      <div className="grid grid-cols-4 gap-16 row-start-3 items-center sm:items-start mb-[4rem]">
+      <div className="grid grid-cols-4 gap-20 row-start-2 items-center sm:items-start">
         {sortedLocations.slice(0, 8).map((location, index) => {
           return (
             <div key={index}>
@@ -46,7 +46,7 @@ export default function Home() {
           );
         })}
       </div>
-      <div className="grid grid-cols-3 gap-16 row-start-4 items-center mb-[5rem]">
+      <div className="grid grid-cols-3 gap-20 mb-[1rem] row-start-3 items-center">
         {sortedLocations.slice(8, 11).map((location, index) => {
           return (
             <div key={index}>
