@@ -20,7 +20,7 @@ const Header = () => {
             src={contextTheme === "dark" ? darkModeLogo : colourlogo}
             alt="logo"
             width={350}
-            className="py-8 transition-opacity duration-300 ease-in-out"
+            className="pb-8 transition-opacity duration-300 ease-in-out"
             style={{ opacity: contextTheme === "dark" ? 1 : 1 }}
             priority
           />
